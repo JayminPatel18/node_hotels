@@ -7,6 +7,7 @@ const MongoDBURL = process.env.MongoDB_URL // this is online DB setup
 
 // set up MongoDB connection
 mongoose.connect(MongoDBURL, {
+    tls: true,  
 })
 
 // Get the default connection
