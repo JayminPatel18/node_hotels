@@ -2,11 +2,13 @@ const mongoose = require('mongoose');
 require('dotenv').config();
 
 // Define the MongoDB connection URL
-// const MongoDBURL = process.env.MongoDB_URL_LOCAL 
-const MongoDBURL = process.env.MongoDB_URL // this is online DB setup 
+const MongoDBURL = process.env.MongoDB_URL_LOCAL 
+//const MongoDBURL = process.env.MongoDB_URL // this is online DB setup 
 
 // set up MongoDB connection
-mongoose.connect(MongoDBURL, {}).then(() => console.log('Connected to MongoDB Server'))
+mongoose.connect(MongoDBURL, {
+    serverSelectionTimeoutMS: 30000, // 30 seconds
+}).then(() => console.log('Connected to MongoDB Server'))
     .catch(err => console.error('Disconnected to MongoDB server', err));
 
 // Get the default connection
