@@ -12,7 +12,7 @@ const personSchema = new monoose.Schema({
     },
     work : {
         type: String,
-        enum:['Chef', 'Waiter', 'Manager','Cashier', 'Store Assistant'],
+        enum:['Chef', 'Waiter', 'Manager','Cashier', 'Store Assistant', 'Sales Associate'],
         required : true
     },
     mobile: {
